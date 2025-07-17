@@ -8,7 +8,7 @@
 
 ```csharp
 int age = 25;
-string name = "John";
+string name = "Rijoan Maruf";
 double salary = 50000.50;
 bool isEmployed = true;
 ```
@@ -109,8 +109,8 @@ int asciiValue = (int)grade;  // 65
 - Strings are immutable (cannot be changed after creation)
 
 ```csharp
-string firstName = "John";
-string lastName = "Doe";
+string firstName = "Rijoan";
+string lastName = "Maruf";
 string fullName = firstName + " " + lastName;  // Concatenation
 
 // String interpolation
@@ -213,48 +213,48 @@ int randomNumber = random.Next(1, 101);  // Random int from 1 to 100
 ## String Methods
 
 ```csharp
-string text = "Hello, World!";
+string text = "Hello, Rijoan Maruf!";
 
 // Length
-int length = text.Length;  // 13
+int length = text.Length;  // 19
 
 // Accessing characters
 char firstChar = text[0];  // 'H'
 
 // Changing case
-string upper = text.ToUpper();  // "HELLO, WORLD!"
-string lower = text.ToLower();  // "hello, world!"
+string upper = text.ToUpper();  // "HELLO, RIJOAN MARUF!"
+string lower = text.ToLower();  // "hello, rijoan maruf!"
 
 // Substring
-string sub = text.Substring(7, 5);  // "World"
+string sub = text.Substring(7, 12);  // "Rijoan Maruf"
 
 // Index methods
-int index = text.IndexOf("World");  // 7
-bool contains = text.Contains("Hello");  // true
+int index = text.IndexOf("Rijoan");  // 7
+bool contains = text.Contains("Rijoan");  // true
 bool startsWith = text.StartsWith("Hello");  // true
 bool endsWith = text.EndsWith("!");  // true
 
 // Replacing
-string newText = text.Replace("World", "Universe");  // "Hello, Universe!"
+string newText = text.Replace("Rijoan Maruf", "Mr. Maruf");  // "Hello, Mr. Maruf!"
 
 // Trimming whitespace
-string paddedText = "  Hello  ";
-string trimmed = paddedText.Trim();  // "Hello"
+string paddedText = "  Rijoan Maruf  ";
+string trimmed = paddedText.Trim();  // "Rijoan Maruf"
 
 // Splitting
 string csv = "apple,banana,orange";
 string[] fruits = csv.Split(',');  // ["apple", "banana", "orange"]
 
 // Joining
-string[] words = { "Hello", "beautiful", "world" };
-string joined = string.Join(" ", words);  // "Hello beautiful world"
+string[] words = { "Hello", "Rijoan", "Maruf" };
+string joined = string.Join(" ", words);  // "Hello Rijoan Maruf"
 
 // Empty/null checks
 bool isEmpty = string.IsNullOrEmpty(text);  // false
 bool isWhiteSpace = string.IsNullOrWhiteSpace(text);  // false
 
 // String comparison
-bool areEqual = string.Equals("hello", "HELLO", StringComparison.OrdinalIgnoreCase);  // true
+bool areEqual = string.Equals("rijoan", "RIJOAN", StringComparison.OrdinalIgnoreCase);  // true
 ```
 
 ## Control Flow - If/Else
@@ -455,8 +455,8 @@ SayHello();  // Hello!
 int sum = Add(5, 3);  // 8
 
 // Calling method with named arguments
-Greet(name: "John");  // Hello, John!
-Greet(name: "Mary", greeting: "Hi");  // Hi, Mary!
+Greet(name: "Rijoan Maruf");  // Hello, Rijoan Maruf!
+Greet(name: "Rijoan Maruf", greeting: "Hi");  // Hi, Rijoan Maruf!
 
 // Using out parameter
 bool success = TryDivide(10, 2, out int result);
