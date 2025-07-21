@@ -1,5 +1,9 @@
 # Object-Oriented Programming (OOP) in C#
 
+**COMPLETE LECTURE NOTES & STUDY GUIDE**
+
+This comprehensive document contains everything you need to know about Object-Oriented Programming in C#, with detailed explanations, real-world examples, and key concepts for exams. No need to read lecture materials - this covers everything!
+
 ## Table of Contents
 1. [Structures](#structures)
 2. [Classes and Objects](#classes-and-objects)
@@ -1298,3 +1302,105 @@ public class LambdaDemo
         public int Age { get; set; }
     }
 }
+
+## Summary Diagrams and Exam Tips
+
+### OOP Principles Quick Reference
+
+**Encapsulation:**
+- Hide implementation details 
+- Control access using access modifiers (private, protected, public)
+- Use properties to expose controlled access to data
+
+**Inheritance:**
+- "Is-a" relationship
+- Base class (parent) → Derived class (child)
+- Use `virtual` and `override` for polymorphism
+- C# only supports single inheritance for classes
+
+**Polymorphism:**
+- Static: Method overloading (compile-time)
+- Dynamic: Method overriding (runtime)
+- Using base class references to call derived class methods
+
+**Abstraction:**
+- Focus on what an object does, not how it works
+- Use `abstract` classes and methods
+- Cannot instantiate abstract classes
+
+### Common Exam Questions
+
+1. **Difference between abstract class and interface?**
+   - Abstract class: Can have implementation, constructors, fields; single inheritance
+   - Interface: No implementation (before C# 8), no fields, multiple inheritance
+
+2. **When to use struct vs class?**
+   - Struct: Small, value type, immutable, stack-based (faster for small data)
+   - Class: Reference type, inheritance, heap-based, mutable
+
+3. **Method hiding vs overriding?**
+   - Hiding: `new` keyword, base reference calls base method
+   - Overriding: `override` keyword, base reference calls derived method
+
+4. **Access modifiers purpose:**
+   - `public`: Accessible everywhere
+   - `private`: Only within containing class
+   - `protected`: Within class and derived classes
+   - `internal`: Within same assembly
+   - `protected internal`: Within same assembly or derived classes
+
+5. **C# naming conventions:**
+   - PascalCase: Classes, methods, properties
+   - camelCase: Variables, parameters
+   - _camelCase: Private fields
+
+### Performance Considerations
+
+**Memory Efficiency:**
+- Use structs for small data (≤16 bytes)
+- Consider using readonly properties for immutable objects
+- Implement IDisposable for resource cleanup
+
+**Runtime Performance:**
+- Virtual method calls have slight overhead
+- Sealed classes can be optimized by compiler
+- Generics offer better performance than object boxing/unboxing
+
+### OOP Best Practices
+
+1. Follow Single Responsibility Principle (SRP)
+2. Prefer composition over inheritance
+3. Code to interfaces, not implementations
+4. Keep inheritance hierarchies shallow
+5. Use dependency injection for better testability
+6. Make classes immutable where possible
+7. Override ToString() for better debugging
+8. Use properties instead of public fields
+
+### Memory Diagram: Value vs Reference Types
+
+```
+Stack Memory         Heap Memory
++------------+       +------------+
+| struct p1  |       | class c1   |
+| X: 5       |       | Name: "John"|
+| Y: 10      |       +------------+
++------------+           ↑
+                         |
+| struct p2  |       +--|----------+
+| X: 5       |       | reference  |
+| Y: 10      |       +------------+
++------------+
+```
+
+### Key Differences Between OOP Languages
+
+| Feature           | C#                | Java               | C++                |
+|-------------------|-------------------|--------------------|--------------------|
+| Multiple Inherit. | Interfaces only   | Interfaces only    | Full support       |
+| Properties        | Built-in          | Manual get/set     | Manual get/set     |
+| Operator Overload | Supported         | Not supported      | Supported          | 
+| Memory Management | Garbage Collection| Garbage Collection | Manual + RAII      |
+| Generics          | Runtime+Compile   | Erasure (Runtime)  | Templates (Compile)|
+
+Remember these concepts for your exams, and you'll be well prepared to tackle any OOP question!
