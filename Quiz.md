@@ -537,11 +537,11 @@ public static void ProcessNullableValue(int? value)
 
 ```csharp
 // Tuple literal syntax (ValueTuple)
-(string, int) person = ("John", 30);
+(string, int) person = ("Rijoan", 30);
 Console.WriteLine($"Name: {person.Item1}, Age: {person.Item2}");
 
 // Named tuple elements
-var personNamed = (Name: "Alice", Age: 25, City: "New York");
+var personNamed = (Name: "Khairul", Age: 25, City: "New York");
 Console.WriteLine($"Name: {personNamed.Name}");
 Console.WriteLine($"Age: {personNamed.Age}");
 Console.WriteLine($"City: {personNamed.City}");
@@ -569,7 +569,7 @@ var (minimum, maximum, average) = AnalyzeNumbers(data);
 Console.WriteLine($"Min: {minimum}, Max: {maximum}, Avg: {average:F2}");
 
 // Nested tuples
-var nested = (Person: (Name: "Bob", Age: 35), Address: (Street: "123 Main St", City: "Boston"));
+var nested = (Person: (Name: "Raisul", Age: 35), Address: (Street: "123 Main St", City: "Boston"));
 Console.WriteLine($"Person: {nested.Person.Name}, City: {nested.Address.City}");
 
 // Tuple comparison
@@ -732,8 +732,8 @@ class ClassDemo
     public static void Main() 
     {
         // Creating objects
-        var person = new Person("John", "Doe", new DateTime(1990, 5, 15));
-        var employee = new Employee("Jane", "Smith", new DateTime(1985, 3, 22), 
+        var person = new Person("Rijoan", "Mahmud", new DateTime(1990, 5, 15));
+        var employee = new Employee("Khairul", "Islam", new DateTime(1985, 3, 22), 
                                    "EMP001", 75000m, "IT");
         
         // Using objects
@@ -878,7 +878,7 @@ class StringDemo
     public static void Main() 
     {
         // String creation
-        string name = "John Doe";                       // String literal
+        string name = "Rijoan Mahmud";                       // String literal
         string message = new string('A', 5);            // "AAAAA"
         string empty = string.Empty;                    // Empty string
         string nullString = null;                       // Null reference
@@ -893,11 +893,11 @@ class StringDemo
         Console.WriteLine($"Last character: {name[name.Length - 1]}"); // 'e'
         
         // String methods (return new strings due to immutability)
-        string upperCase = name.ToUpper();              // "JOHN DOE"
-        string lowerCase = name.ToLower();              // "john doe"
+        string upperCase = name.ToUpper();              // "RIJOAN MAHMUD"
+        string lowerCase = name.ToLower();              // "rijoan mahmud"
         string trimmed = "  Hello World  ".Trim();      // "Hello World"
-        string replaced = name.Replace("John", "Jane"); // "Jane Doe"
-        string substring = name.Substring(0, 4);        // "John"
+        string replaced = name.Replace("Rijoan", "Khairul"); // "Khairul Mahmud"
+        string substring = name.Substring(0, 6);        // "Rijoan"
         
         Console.WriteLine($"Original: {name}");         // Original unchanged
         Console.WriteLine($"Upper: {upperCase}");
@@ -912,8 +912,8 @@ class StringDemo
         Console.WriteLine($"Ignore case: {str1.Equals(str2, StringComparison.OrdinalIgnoreCase)}"); // True
         
         // String concatenation
-        string firstName = "John";
-        string lastName = "Doe";
+        string firstName = "Rijoan";
+        string lastName = "Mahmud";
         string fullName1 = firstName + " " + lastName;           // Simple concatenation
         string fullName2 = string.Concat(firstName, " ", lastName); // Using Concat method
         string fullName3 = $"{firstName} {lastName}";            // String interpolation (preferred)
@@ -950,7 +950,7 @@ class StringDemo
         Console.WriteLine(receipt);                             // "Items: 3, Total: $59.97"
         
         // Verbatim strings
-        string path = @"C:\Users\John\Documents\file.txt";      // No need to escape backslashes
+        string path = @"C:\Users\Rijoan\Documents\file.txt";      // No need to escape backslashes
         string multiline = @"Line 1
 Line 2
 Line 3";
@@ -958,7 +958,7 @@ Line 3";
         // Raw string literals (C# 11+)
         string json = """
         {
-            "name": "John",
+            "name": "Rijoan",
             "age": 30,
             "city": "New York"
         }
@@ -966,7 +966,7 @@ Line 3";
     }
 }
 ```
-```
+
 
 ## Constants - const vs readonly
 
@@ -1105,9 +1105,8 @@ public class ConstVsReadonlyComparison
     public const double PI = 3.14159;
     public static readonly double ReadonlyPI = 3.14159;
 }
+```
 
-// Summary table in comments:
-/*
 | Aspect          | const                    | readonly                |
 |-----------------|--------------------------|-------------------------|
 | Initialization  | At declaration only      | Declaration or constructor |
@@ -1118,8 +1117,8 @@ public class ConstVsReadonlyComparison
 | Performance     | Faster (inlined)         | Slightly slower         |
 | Flexibility     | Less flexible            | More flexible           |
 | Use case        | True constants           | Per-instance constants  |
-*/
-```
+
+
 
 ## Properties
 
@@ -1293,14 +1292,14 @@ class PropertyDemo
         // Using properties
         var employee = new PropertyExamples 
         {
-            FirstName = "John",      // Required property
-            LastName = "Doe",        // Required property
+            FirstName = "Rijoan",      // Required property
+            LastName = "Mahmud",        // Required property
             EmployeeId = "EMP001",   // Init-only property
-            Email = "john.doe@company.com"
+            Email = "rijoan.mahmud@company.com"
         };
         
         // Property access
-        employee.Name = "John Doe";  // Calls setter with validation
+        employee.Name = "Rijoan Mahmud";  // Calls setter with validation
         Console.WriteLine(employee.Name);  // Calls getter
         
         // Computed properties
@@ -1320,14 +1319,14 @@ class PropertyDemo
         projects = employee.Projects;      // Returns cached value
         
         // Auto-implemented properties
-        employee.Email = "john.doe@newcompany.com";
+        employee.Email = "rijoan.mahmud@newcompany.com";
         Console.WriteLine($"Email: {employee.Email}");
         
         // Static property
         Console.WriteLine($"Total employees: {PropertyExamples.TotalEmployees}");
     }
 }
-
+```
 ## Control Structures
 
 ### Definition
@@ -2041,10 +2040,10 @@ class ForeachLoopDemo
         // Foreach with Dictionary
         Dictionary<string, int> ageMap = new Dictionary<string, int> 
         {
-            { "Alice", 25 },
-            { "Bob", 30 },
-            { "Charlie", 35 },
-            { "Diana", 28 }
+            { "Rijoan", 25 },
+            { "Khairul", 30 },
+            { "Raisul", 35 },
+            { "Saif", 28 }
         };
         
         Console.WriteLine("\nAge information:");
@@ -2097,8 +2096,8 @@ class ForeachLoopDemo
         // Foreach with custom objects
         List<Employee> employees = new List<Employee> 
         {
-            new Employee { Name = "John", Department = "IT", Salary = 75000 },
-            new Employee { Name = "Jane", Department = "HR", Salary = 65000 },
+            new Employee { Name = "Rijoan", Department = "IT", Salary = 75000 },
+            new Employee { Name = "Khairul", Department = "HR", Salary = 65000 },
             new Employee { Name = "Mike", Department = "Finance", Salary = 80000 }
         };
         
@@ -2138,9 +2137,9 @@ class ForeachLoopDemo
         Console.WriteLine("\nNested foreach - Departments and Employees:");
         var departments = new Dictionary<string, List<string>> 
         {
-            { "IT", new List<string> { "John", "Alice", "Bob" } },
-            { "HR", new List<string> { "Jane", "Carol" } },
-            { "Finance", new List<string> { "Mike", "Dave", "Eve" } }
+            { "IT", new List<string> { "Rijoan", "Khairul", "Raisul" } },
+            { "HR", new List<string> { "Saif", "Zahin" } },
+            { "Finance", new List<string> { "Maruf", "Karim", "Nasir" } }
         };
         
         foreach (var dept in departments) 
@@ -2370,11 +2369,11 @@ class ContinueStatementDemo
         Console.WriteLine("\nProcessing employee data:");
         List<Employee> employees = new List<Employee> 
         {
-            new Employee { Name = "John", Age = 25, Department = "IT" },
+            new Employee { Name = "Rijoan", Age = 25, Department = "IT" },
             new Employee { Name = "", Age = 30, Department = "HR" },  // Invalid name
-            new Employee { Name = "Alice", Age = -5, Department = "Finance" },  // Invalid age
-            new Employee { Name = "Bob", Age = 35, Department = "" },  // Invalid department
-            new Employee { Name = "Carol", Age = 28, Department = "IT" }
+            new Employee { Name = "Khairul", Age = -5, Department = "Finance" },  // Invalid age
+            new Employee { Name = "Raisul", Age = 35, Department = "" },  // Invalid department
+            new Employee { Name = "Saif", Age = 28, Department = "IT" }
         };
         
         Console.WriteLine("Valid employees:");
@@ -2779,7 +2778,7 @@ class MethodsDemo
     {
         // Calling methods
         SayHello();
-        GreetPerson("Alice");
+        GreetPerson("Rijoan");
         
         int sum = Add(5, 3);
         Console.WriteLine($"5 + 3 = {sum}");
@@ -2793,8 +2792,8 @@ class MethodsDemo
         Console.WriteLine($"Triple multiply: {Multiply(2, 3, 4)}");
         
         // Optional parameters
-        Console.WriteLine(FormatName("John", "Doe"));  // Uses default title
-        Console.WriteLine(FormatName("Jane", "Smith", "Dr."));  // Custom title
+        Console.WriteLine(FormatName("Rijoan", "Mahmud"));  // Uses default title
+        Console.WriteLine(FormatName("Khairul", "Islam", "Dr."));  // Custom title
         
         // Variable arguments
         Console.WriteLine($"Sum of 1,2,3: {Sum(1, 2, 3)}");
@@ -3008,8 +3007,8 @@ class EncapsulationDemo
 {
     public static void Main() 
     {
-        var account1 = new BankAccount("ACC001", "John Doe", 1000);
-        var account2 = new BankAccount("ACC002", "Jane Smith", 500);
+        var account1 = new BankAccount("ACC001", "Rijoan Mahmud", 1000);
+        var account2 = new BankAccount("ACC002", "Khairul Islam", 500);
         
         // Accessing public interface
         Console.WriteLine($"Account 1 Balance: ${account1.Balance}");
@@ -3312,9 +3311,9 @@ class InheritanceDemo
         
         // Creating objects of different classes
         Animal genericAnimal = new Animal("Generic", 5, "Unknown");
-        Dog myDog = new Dog("Buddy", 3, "Golden Retriever", true);
-        Cat myCat = new Cat("Whiskers", 2, true);
-        Puppy myPuppy = new Puppy("Max", 1, "Labrador");
+        Dog myDog = new Dog("Rocky", 3, "Golden Retriever", true);
+        Cat myCat = new Cat("Fluffy", 2, true);
+        Puppy myPuppy = new Puppy("Bruno", 1, "Labrador");
         
         Console.WriteLine("\n--- Basic Information ---");
         Console.WriteLine(genericAnimal);
